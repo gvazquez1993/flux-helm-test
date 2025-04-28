@@ -5,19 +5,13 @@ metadata:
   namespace: default
 spec:
   interval: 1m
-  releaseName: frontend-production
   chart:
     spec:
-      chart: nginx
-      version: "15.2.x"
+      chart: ./charts/frontend-chart
       sourceRef:
-        kind: HelmRepository
-        name: bitnami
+        kind: GitRepository
+        name: flux-helm-test
         namespace: flux-system
-  values:
-    image:
-      repository: gonvazquez/frontend-production
-      tag: latest
-    service:
-      type: LoadBalancer
-    replicaCount: 2
+  valuesFrom:
+    - kind: ConfigMap
+      name: frontend-production-values

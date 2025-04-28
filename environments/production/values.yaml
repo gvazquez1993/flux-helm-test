@@ -1,0 +1,7 @@
+replicaCount: 2
+image:
+  repository: gonvazquez/frontend-production
+  tag: latest
+service:
+  type: LoadBalancer
+  port: 80
