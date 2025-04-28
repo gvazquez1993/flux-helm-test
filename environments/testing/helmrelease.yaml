@@ -16,7 +16,7 @@ spec:
         namespace: flux-system
   values:
     image:
-      repository: gvazquez1993/frontend-testing
+      repository: gonvazquez/frontend-testing
       tag: latest
     service:
       type: LoadBalancer
