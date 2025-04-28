@@ -7,11 +7,12 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: ./charts/frontend-chart
+      chart: charts/frontend-chart
       sourceRef:
         kind: GitRepository
         name: flux-helm-test
         namespace: flux-system
+      interval: 1m
   values:
     name: frontend-testing
     replicaCount: 1
