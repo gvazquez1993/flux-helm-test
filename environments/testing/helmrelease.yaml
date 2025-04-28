@@ -12,6 +12,13 @@ spec:
         kind: GitRepository
         name: flux-helm-test
         namespace: flux-system
-  valuesFrom:
-    - kind: ConfigMap
-      name: frontend-testing-values
+  values:
+    name: frontend-testing
+    replicaCount: 1
+    image:
+      repository: gonvazquez/frontend-testing
+      tag: latest
+      pullPolicy: IfNotPresent
+    service:
+      type: LoadBalancer
+      port: 80
