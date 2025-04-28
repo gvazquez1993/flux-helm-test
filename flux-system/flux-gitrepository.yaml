@@ -1,4 +1,4 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
+apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: flux-helm-test
@@ -6,4 +6,5 @@ metadata:
 spec:
   interval: 1m
   url: https://github.com/gvazquez1993/flux-helm-test.git
-  branch: main
+  ref:
+    branch: main
